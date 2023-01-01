@@ -78,6 +78,3 @@ class ViewModel:
             except Exception as e:
                 self.update_output(f"❌Error while downloading {url}: {e}")
 
-if __name__ == "__main__":
-    from downloader import YouTubeDownloader
-    ViewModel(YouTubeDownloader())
