@@ -9,6 +9,8 @@ from asyncio import subprocess
 # designer.exe localization
 # C:\repos\yt_download\venv\Lib\site-packages\qt5_applications\Qt\bin\designer.exe
 
+# pyinstaller.exe .\main.py --add-binary 'C:\repos\yt_download\venv\Lib\site-packages\pyflac\libraries\windows-x86_64\libFLAC-8.dll;pyflac/libraries/windows-x86_64' --onefile --clean --name ytdownloader
+
 def change_encoding(input: str) -> str:
     return ''.join(
         [chr(i) for i in list(
