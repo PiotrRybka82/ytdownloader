@@ -56,7 +56,7 @@ class ViewModel:
 
 
     def update_input(self) -> None:
-        pass
+        self.ui.inp_url.clear()
 
 
     def update_output(self, msg: str) -> None:
@@ -74,38 +74,7 @@ class ViewModel:
                 log_msg = self.downloader.download(data_type, url).__str__()
 
                 self.update_output(log_msg)
+                self.update_input()
             except Exception as e:
-                self.update_input("❌Error")
+                self.update_output(f"❌Error while downloading {url}: {e}")
 
-
-#     # def __init_ui(self):
-#     #     self.lbl_url = QtWidgets.QLabel(self)
-#     #     self.lbl_url.setText("URL:")
-#     #     self.lbl_url.move(50, 50)
-
-#     #     self.btn_download = QtWidgets.QPushButton(self)
-#     #     self.btn_download.setText("⤵️Download")
-#     #     self.btn_download.move(50, 80)
-#     #     self.btn_download.clicked.connect(self.download)
-
-
-#     # def update(self):
-#     #     self.lbl_url.adjustSize()
-
-
-#     # def download(self):
-#     #     print("It's alive!")
-#     #     # self.lbl_url.setText("ups!")
-#     #     self.update()
-
-
-# # def window():
-#     # app = QApplication(sys.argv)
-#     # win = Window()
-
-#     # win.show()
-#     # sys.exit(app.exec_())
-
-if __name__ == "__main__":
-    from downloader import YouTubeDownloader
-    ViewModel(YouTubeDownloader())
