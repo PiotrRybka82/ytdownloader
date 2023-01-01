@@ -2,6 +2,9 @@ from __future__ import unicode_literals
 import asyncio
 from asyncio import subprocess
 
+# pip install pyqt5
+# pip install pyqt5-tools
+# pyuic5 -x .\gui.ui -o view.py
 
 def change_encoding(input: str) -> str:
     return ''.join(
