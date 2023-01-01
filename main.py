@@ -6,6 +6,9 @@ from asyncio import subprocess
 # pip install pyqt5-tools
 # pyuic5 -x .\gui.ui -o view.py
 
+# designer.exe localization
+# C:\repos\yt_download\venv\Lib\site-packages\qt5_applications\Qt\bin\designer.exe
+
 def change_encoding(input: str) -> str:
     return ''.join(
         [chr(i) for i in list(
