@@ -56,7 +56,7 @@ class ViewModel:
 
 
     def update_input(self) -> None:
-        pass
+        self.ui.inp_url.clear()
 
 
     def update_output(self, msg: str) -> None:
@@ -74,8 +74,9 @@ class ViewModel:
                 log_msg = self.downloader.download(data_type, url).__str__()
 
                 self.update_output(log_msg)
+                self.update_input()
             except Exception as e:
-                self.update_input("❌Error")
+                self.update_output(f"❌Error while downloading {url}: {e}")
 
 if __name__ == "__main__":
     from downloader import YouTubeDownloader
