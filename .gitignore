@@ -130,3 +130,10 @@ dmypy.json
 
 # Temp folder
 temp/
+
+# Result files
+*.flac
+*.wave
+*.wav
+*.mp3
+*.mp4
